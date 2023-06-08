@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>list</title>
+</head>
+<body>
+<div>
+  <h1>Grade list</h1>
+  <table>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>grade</th>
+    </tr>
+    <tr th:each="grade: ${grades}">
+      <td th:text="${grade.firstName}"/>
+      <td th:text="${grade.lastName}"/>
+      <td th:text="${grade.grade}"/>
+      <td><a th:href="@{'/'+${grade.firstName}+'/'+${grade.lastName}}">Details</a></td>
+    </tr>
+  </table>
+</div>
+<a type="button" href="/grade">Add new grade</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gradeForm</title>
+</head>
+<body>
+<form th:action="@{/grade}" method="post">
+  <label for="firstName">First name</label>
+  <input type="text" name="firstName" id="firstName" placeholder="Type fist name...">
+
+  <label for="lastName">Last name</label>
+  <input type="text" name="lastName" id="lastName" placeholder="Type last name...">
+
+  <label for="grade">Grade</label>
+  <input type="number" name="grade" id="grade" placeholder="Type grade...">
+
+
+  <input type="SUBMIT" value="Save Grade">
+</form>
+</body>
+</html>
