@@ -1,0 +1,79 @@
+[
+  {
+    "id": 123,
+    "name": "Jovan Lee",
+    "email": "jovan@example.com",
+    "phone": "+49 176 14890478",
+    "age": 32,
+    "projects": [
+      "Remote Job Board",
+      "Data Migration"
+    ],
+    "address": {
+      "street": "Yorckstr. 75",
+      "city": "Berlin",
+      "zipcode": 10965,
+      "country": "Germany"
+    },
+    "paymentMethods": [
+      "PayPal",
+      "Stripe"
+    ],
+    "profileInfo": {
+      "gender": "Male",
+      "married": "Yes",
+      "source": "LinkedIn"
+    }
+  },
+  {
+    "id": 1234,
+    "name": "Othmen",
+    "email": "otmen@example.com",
+    "phone": "+32 176 5441911",
+    "age": 19,
+    "projects": [
+      "AOP",
+      "Redis"
+    ],
+    "address": {
+      "street": "antwerpstraat",
+      "city": "Antwerpen",
+      "zipcode": 2000,
+      "country": "Belgium"
+    },
+    "paymentMethods": [
+      "Bankcontact"
+    ],
+    "profileInfo": {
+      "gender": "Male",
+      "married": "No",
+      "source": "AP"
+    }
+  },
+  {
+    "id": 12345,
+    "name": "Farha",
+    "email": "Farha@example.com",
+    "phone": "+31 176 4984",
+    "age": 25,
+    "projects": [
+      "Start up",
+      "How to not code and make cash"
+    ],
+    "address": {
+      "street": "dezestraat",
+      "city": "Antwerpen",
+      "zipcode": 2000,
+      "country": "Belgium"
+    },
+    "paymentMethods": [
+      "PayPal",
+      "Bankcontact"
+    ],
+    "profileInfo": {
+      "gender": "Female",
+      "married": "No",
+      "source": "LinkedIn"
+    }
+  }
+]

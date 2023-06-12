@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        .table-responsive {
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Projects</th>
+            <th>Payment Methods</th>
+            <th>Address</th>
+            <th>Profile info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer: ${customers}">
+            <td th:text="${customer.name}"/>
+            <td th:text="${customer.email}"/>
+            <td th:text="${customer.phone}"/>
+            <td th:text="${customer.age}"/>
+            <td>
+                <li th:each="project : ${customer.projects}" th:text="${project}"></li>
+            </td>
+            <td>
+                <li th:each="paymentMethod : ${customer.paymentMethods}" th:text="${paymentMethod}"></li>
+            </td>
+            <td th:text="${customer.address.street + ', ' + customer.address.zipcode + ' ' + customer.address.city + ', ' + customer.address.country.toUpperCase()}"/>
+            <td>
+                <p th:each="entry : ${customer.profileInfo.entrySet()}"
+                   th:text="${entry.key + ': ' + entry.value}"></p>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary mt-3" onclick="window.location.href='/form'">Add Customer</button>
+</div>
+</body>
+</html>
