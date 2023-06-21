@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Stations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+  
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 50px;
+      }
+  
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: #969bd9;">
+    <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li ><a th:href="@{/add-weather-station}">Voeg station toe</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li ><a th:href="@{/weather-stations}"><n1>Weerstations list</n1></a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Station Naam</th>
+            <th>Acties</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="station: ${stations}">
+            <td th:text="${station.name}"/>
+
+            <td><a th:href="@{'/detail'+'/'+${station.name}}">Details</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary mt-3" onclick="window.location.href='/add-weather-station'">Voeg
+        weerstation toe
+    </button>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+<h1>Students list</h1>
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Date of birth</th>
+    <th>Study program</th>
+  </tr>
+  <tr th:each="student: ${students}">
+    <td th:text="${student.firstName}"/>
+    <td th:text="${student.lastName}"/>
+    <td th:text="${student.dateOfBirth}"/>
+    <td th:text="${student.studyProgram}"/>
+  </tr>
+</table>
+</div>
+<a type="button" href="/addStudent">Add new student</a>
+</body>
+</html>

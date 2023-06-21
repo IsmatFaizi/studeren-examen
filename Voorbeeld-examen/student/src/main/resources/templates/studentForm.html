@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add student</title>
+</head>
+<body>
+<form th:action="@{/addStudent}" method="POST">
+    <label for="firstName">First name</label>
+    <input type="text" name="firstName" id="firstName" placeholder="Type fist name...">
+
+    <label for="lastName">Last name</label>
+    <input type="text" name="lastName" id="lastName" placeholder="Type last name...">
+
+    <label for="dateOfBirth">Date of birth</label>
+    <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Type ...">
+
+    <label for="studyProgram">Study program</label>
+    <input type="text" name="studyProgram" id="studyProgram" placeholder="Type ...">
+
+
+    <input type="SUBMIT" value="Save student">
+</form>
+</body>
+</html>

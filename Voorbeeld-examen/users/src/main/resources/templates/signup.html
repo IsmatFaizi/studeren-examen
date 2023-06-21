@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action='@{/signup}' method='POST'>
+  <div class='form-group row'>
+    <div class='col-xs-4'>
+      <label for='email'>Email : </label>
+      <input type='text' class='form-control' name='email' id='email'>
+      <label for='password'>Password : </label>
+      <input type='text' class='form-control' name='password' id='password'>
+    </div>
+  </div>
+
+  <input type='SUBMIT' value='sign up'>
+  <p th:text='${message}'></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add match</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: #969bd9;">
+    <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a th:href="@{/show-matches}">show matches</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a th:href="@{/add-team}">add team</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a th:href="@{/add-match}">add match</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a th:href="@{/arrangement}">arrangement</a></li>
+        </ul>
+
+    </div>
+</nav>
+<div class="container">
+    <h1>Voeg weerstation toe</h1>
+    <form th:action="@{/add-match}" method="POST">
+        <div class="form-group">
+            <label for="nameTeam1">Naam Team 1:</label>
+            <select id="nameTeam1" name="nameTeam1" class="form-control" required>
+                <option value="0">Select een optie</option>
+                <option th:each="team : ${teams}" th:value="${team}" th:text="${team}"/>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="scoreTeam1">Score Team 1:</label>
+            <input type="number" id="scoreTeam1" name="scoreTeam1" class="form-control" min="0" max="6" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nameTeam2">Naam Team 2:</label>
+            <select id="nameTeam2" name="nameTeam2" class="form-control" required>
+                <option value="0">Select een optie</option>
+                <option th:each="team : ${teams}" th:value="${team}" th:text="${team}"/>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="scoreTeam2">Score Team 2:</label>
+            <input type="number" id="scoreTeam2" name="scoreTeam2" class="form-control" min="0" max="6" required>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary mt-3">Voeg toe</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

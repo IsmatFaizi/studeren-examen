@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add date</title>
+</head>
+<body>
+<form th:action="@{/addDate}" method="post">
+    <label for="startDate">Start date</label>
+    <input type="date" name="startDate" id="startDate" pattern="\d{2}-\d{2}-\d{4}">
+
+    <label for="endDate">End date</label>
+    <input type="date" name="endDate" id="endDate" pattern="\d{2}-\d{2}-\d{4}">
+
+    <label for="checkDate">Check date</label>
+    <input type="date" name="checkDate" id="checkDate" pattern="\d{2}-\d{2}-\d{4}">
+
+    <input type="SUBMIT" value="Check date">
+</form>
+</body>
+</html>
